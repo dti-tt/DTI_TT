@@ -98,8 +98,8 @@ python main.py cold tt
 ### Dataset Information
 
 The dataset includes both cold-start and warm-start splits to evaluate the model's performance in different scenarios:
-- Cold-Start: The model encounters previously unseen drugs. 📢 drug인지 target인지 다시 한번 확인
-- Warm-Start: The model works with known drugs and targets. 📢 설명 괜찮은지..
+- Cold-Start: The model encounters previously unseen drugs.
+- Warm-Start: The model works with known drugs and targets.
 
 The datasets are stored in the `data/` directory, with separate files for training and testing in each scenario.
 
