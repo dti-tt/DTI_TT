@@ -16,20 +16,20 @@ DTI_TT/
 │   ├── coldstart_train.csv               # Cold-start training dataset
 │   ├── test.csv                          # General test dataset
 │   ├── warmstart_test.csv                # Warm-start test dataset
-│   ├── warmstart_train.csv               # Warm-start training dataset
+│   └── warmstart_train.csv               # Warm-start training dataset
 │
 ├── src/
 │   ├── dti_tt/                           # Core source code for DTI-TT model
 │   │   ├── DTI_NN.py                     # Neural network-based model
 │   │   ├── DTI.py                        # Two Tower model implementation
 │   │   ├── utils.py                      # Utility functions
-│   ├── embeddings/
-│   │   ├── KPGT/                         # Pretrained embeddings directory
-│   │   └── proteinBERT.pkl               # Pretrained Protein BERT model
+│   └── embeddings/
+│       ├── KPGT/                         # Pretrained embeddings directory
+│       └── proteinBERT.pkl               # Pretrained Protein BERT model
 │
 ├── main.py                               # Main script to run experiments
 ├── README.md                             # Project documentation
-├── requirements.txt                      # Python dependencies
+└── requirements.txt                      # Python dependencies
 ```
 
 ---
