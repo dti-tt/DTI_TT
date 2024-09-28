@@ -1,6 +1,4 @@
-# Project Name
-
-DTI-TT: Drug–Target Interaction Prediction Based on Two Tower Recommendation System
+# DTI-TT: Drug–Target Interaction Prediction Based on Two Tower Recommendation System
 
 ## Overview
 
@@ -49,7 +47,7 @@ Ensure you have Python 3.10 or higher installed. 📢 3.10 이상이어도 되�
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/dti-tt/DTI_TT.git # 📢 실제 링크로 바꾸기
+git clone https://github.com/dti-tt/DTI_TT.git
 cd DTI_TT
 ```
 
