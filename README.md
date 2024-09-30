@@ -65,6 +65,10 @@ Here is a list of key dependencies included in `requirements.txt`
 - scikit-learn
 - pandas
 
+3. Download the dataset and pretrained ProteinBERT model:
+
+You can download the dataset and pretrained ProteinBERT model in [here](https://drive.google.com/drive/folders/1TcfRF-1dblXWCbGo_VYw15wLAnbxLWQK?usp=sharing).
+
 ---
 
 ## Usage
