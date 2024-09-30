@@ -105,7 +105,7 @@ python main.py tt cold
 The dataset includes both cold-start and warm-start splits to evaluate the model's performance in different scenarios:
 - Cold-Start: The model encounters previously unseen drugs.
 - Warm-Start: The model works with known drugs and targets.
-
+Download the dataset, create a `DTI_TT/data` folder, and save the dataset in this folder. 
 ---
 
 ## Acknowledgments
