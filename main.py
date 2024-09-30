@@ -14,9 +14,9 @@ warnings.filterwarnings("ignore")
 
 
 if sys.argv[1] == "tt":
-    from src.DTI import DTI_TwoTower as models
+    from DeepPurpose import DTI_TwoTower as models
 elif sys.argv[1] == "bs":
-    from src.DTI import DTI_Baseline as models
+    from DeepPurpose import DTI_Baseline as models
 
 DATA_PATH = "./data/"
 
