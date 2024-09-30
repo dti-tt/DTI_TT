@@ -263,7 +263,6 @@ class DBTA:
 		drug_encoding = config['drug_encoding']
 		target_encoding = config['target_encoding']
 
-		# jungmin: 해당 주석 바로 아래 줄 맨 끝에 KPGT 추가
 		if drug_encoding == 'Morgan' or drug_encoding == 'ErG' or drug_encoding=='Pubchem' or drug_encoding=='Daylight' or drug_encoding=='rdkit_2d_normalized' or drug_encoding == 'ESPF' or drug_encoding == 'KPGT':
 			# Future TODO: support multiple encoding scheme for static input 
 			self.model_drug = MLP(config['input_dim_drug'], config['hidden_dim_drug'], config['mlp_hidden_dims_drug'])
@@ -302,7 +301,6 @@ class DBTA:
 		else:
 			raise AttributeError('Please use one of the available encoding method.')
 
-		# jungmin: added ProteinBERT
 		if target_encoding == 'AAC' or target_encoding == 'PseudoAAC' or  target_encoding == 'Conjoint_triad' or target_encoding == 'Quasi-seq' or target_encoding == 'ESPF' or target_encoding == 'ProteinBERT':
 			self.model_protein = MLP(config['input_dim_protein'], config['hidden_dim_protein'], config['mlp_hidden_dims_target'])
 		elif target_encoding == 'CNN':
