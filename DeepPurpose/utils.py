@@ -26,13 +26,13 @@ import sys
 import pathlib
  
 current_dir = os.path.dirname(__file__)
-embedding_dir = os.path.join(current_dir, '.', 'embeddings')
+embedding_dir = os.path.join(current_dir, '..', 'embeddings')
 sys.path.insert(0, embedding_dir)
 
 try:
     from KPGT.KPGTProcessor import KPGTProcessor
 except ImportError as e:
-    print(f"🚨 Import failed: {e}")
+    print(f"Import failed: {e}")
 
 
 this_dir = str(pathlib.Path(__file__).parent.absolute())
@@ -401,7 +401,7 @@ def encode_drug(df_data, drug_encoding, column_name = 'SMILES', save_column_name
 		df_data[save_column_name] = [unique_dict[i] for i in df_data[column_name]]
 
 	elif drug_encoding == 'KPGT':
-		with open('./embeddings/KPGT/usage/updated_SMILES_dict.pkl', 'rb') as file:
+		with open('../embeddings/KPGT/usage/updated_SMILES_dict.pkl', 'rb') as file:
 			unique_dict = pickle.load(file)
 		df_data[save_column_name] = df_data[column_name].map(unique_dict)
 		unmatched_rows = df_data[df_data[save_column_name].isna()]
@@ -411,7 +411,7 @@ def encode_drug(df_data, drug_encoding, column_name = 'SMILES', save_column_name
 			print("Unmatched values in the column")
 			print(unmatched_values)
 
-			unmatched_csv_path = './embeddings/KPGT/usage/unmatched_drug_unique.csv'
+			unmatched_csv_path = '../embeddings/KPGT/usage/unmatched_drug_unique.csv'
 			unmatched_rows.to_csv(unmatched_csv_path, index=False)
 			print(unmatched_rows.columns)
 
@@ -422,7 +422,7 @@ def encode_drug(df_data, drug_encoding, column_name = 'SMILES', save_column_name
 			unique_dict.update(unmatched_dict)
 			df_data[save_column_name] = df_data[column_name].map(unique_dict)
 
-			with open('./embeddings/KPGT/usage/updated_SMILES_dict.pkl', 'wb') as file:
+			with open('../embeddings/KPGT/usage/updated_SMILES_dict.pkl', 'wb') as file:
 				pickle.dump(unique_dict, file)
     
 		print("Drug encode complete")
@@ -1145,12 +1145,12 @@ def protein2espf(x):
 # v1 = np.array(dic_name[x])
 def protein2BERT(x):
 
-    with open('./embeddings/proteinBERT.pkl', 'rb') as f:
+    with open('../embeddings/proteinBERT.pkl', 'rb') as f:
         data = pickle.load(f)
         
         v1_str = data[x].strip("[]") # data[x] --> "[-1.59092120e-02  1.63246670e-02 -5.66587300e-03 ...]"
         v1 = np.fromstring(v1_str, sep=' ', dtype=float)
-        # print(f"🐵 v1: {v1}, v1 shape: {v1.shape}") --> (1024, )
+        # print(f"v1: {v1}, v1 shape: {v1.shape}") --> (1024, )
         
         return v1
 
