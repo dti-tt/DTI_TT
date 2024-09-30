@@ -69,7 +69,7 @@ Here is a list of key dependencies included in `requirements.txt`
 
 #### Pretrained KPGT models:
   - Download the pretrained KPGT models at [lihan97/KPGT](https://github.com/lihan97/KPGT) and save it to: `DTI_TT/src/embedddings/`
-  - Download the KPGT embeddings in [here](https://drive.google.com/drive/folders/1TcfRF-1dblXWCbGo_VYw15wLAnbxLWQK?usp=sharing) and save it to: `DTI_TT/src/KPGT/usage/`
+  - Download the KPGT embeddings `updated_smiles_dict.pkl` in [here](https://drive.google.com/drive/folders/1TcfRF-1dblXWCbGo_VYw15wLAnbxLWQK?usp=sharing) and save it to: `DTI_TT/src/KPGT/usage/`
   
 ---
 
