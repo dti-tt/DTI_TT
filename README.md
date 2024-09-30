@@ -37,7 +37,7 @@ To get started with DTI-TT, follow these steps to set up your environment.
 
 ### Prerequisites
 
-Ensure you have Python 3.10 or higher installed. 📢 3.10 이상이어도 되는지 확인!!
+Ensure you have Python 3.10.
 
 ### Setup
 
