@@ -19,9 +19,9 @@ DTI_TT/
 │   └── warmstart_train.csv               # Warm-start training dataset
 │
 ├── src/
-│   ├── dti_tt/                           # Core source code for DTI-TT model
-│   │   ├── DTI_NN.py                     # Neural network-based model
-│   │   ├── DTI.py                        # Two Tower model implementation
+│   ├── DTI/                              # Core source code for DTI-TT model
+│   │   ├── DTI_Baseline.py               # Neural network-based model
+│   │   ├── DTI_TwoTower.py               # Two Tower model implementation
 │   │   ├── utils.py                      # Utility functions
 │   └── embeddings/
 │       ├── KPGT/                         # Pretrained embeddings directory
@@ -78,19 +78,19 @@ Run the script with the following commands, specifying the desired scenario and 
 
 1. Warm-Start with Neural Network:
 ```bash
-python main.py warm nn
+python main.py bs warm
 ```
 2. Warm-Start with Two Tower Model:
 ```bash
-python main.py warm tt
+python main.py tt warm
 ```
 3. Cold-Start with Neural Network:
 ```bash
-python main.py cold nn
+python main.py bs cold
 ```
 4. Cold-Start with Two Tower Model:
 ```bash
-python main.py cold tt
+python main.py tt cold
 ```
 
 ### Dataset Information
