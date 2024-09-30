@@ -64,10 +64,10 @@ Here is a list of key dependencies included in `requirements.txt`
 
 3. Download the dataset and pretrained ProteinBERT embeddings and KPGT models (정민 수정)
 
-##### Dataset, pretrained ProteinBERT embeddings:
+#### Dataset, pretrained ProteinBERT embeddings:
   You can download the dataset and pretrained ProteinBERT embeddings in [here](https://drive.google.com/drive/folders/1TcfRF-1dblXWCbGo_VYw15wLAnbxLWQK?usp=sharing).
 
-##### Pretrained KPGT models:
+#### Pretrained KPGT models:
   You can download the pretrained KPGT models at [lihan97/KPGT](https://github.com/lihan97/KPGT) and save it to: `DTI_TT/src/embedddings/`
 
 ---
