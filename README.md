@@ -14,7 +14,6 @@ DTI_TT/
 ├── data/                                 # Dataset files
 │   ├── coldstart_test.csv                # Cold-start test dataset
 │   ├── coldstart_train.csv               # Cold-start training dataset
-│   ├── test.csv                          # General test dataset
 │   ├── warmstart_test.csv                # Warm-start test dataset
 │   └── warmstart_train.csv               # Warm-start training dataset
 │
