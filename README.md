@@ -104,8 +104,6 @@ The dataset includes both cold-start and warm-start splits to evaluate the model
 - Cold-Start: The model encounters previously unseen drugs.
 - Warm-Start: The model works with known drugs and targets.
 
-The datasets are stored in the `data/` directory, with separate files for training and testing in each scenario.
-
 ---
 
 ## Acknowledgments
