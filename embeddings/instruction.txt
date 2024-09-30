@@ -1,1 +1,1 @@
-embedding directory
+put `proteinBERT.pkl` here
