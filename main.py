@@ -14,9 +14,9 @@ warnings.filterwarnings("ignore")
 
 
 if sys.argv[1] == "tt":
-    from DTI import DTI_TwoTower as models
+    from src.DTI import DTI_TwoTower as models
 elif sys.argv[1] == "bs":
-    from DTI import DTI_Baseline as models
+    from src.DTI import DTI_Baseline as models
 
 DATA_PATH = "./data/"
 
@@ -137,9 +137,8 @@ def error_metrics(pic50_gt, pic50_pr):
 
 def main():
     # Convert data format from our data to DeepPurpose
-    # data_repreprocess("./dataset", "new_train_protein.csv", "dti_train.txt")
-    data_repreprocess(DATA_PATH, TRAIN_FILE_NAME , "train.txt") #"warmstart_train.csv", "warm_train.txt") #"warmstart_train.csv", "warm_train.txt")
-    data_repreprocess(DATA_PATH,TEST_FILE_NAME, "test.txt")
+    data_repreprocess(DATA_PATH, TRAIN_FILE_NAME, "train.txt")
+    data_repreprocess(DATA_PATH, TEST_FILE_NAME, "test.txt")
     
     # Data read
     X_drugs_test, X_targets_test, y_test = dataset.read_file_training_dataset_drug_target_pairs(
@@ -147,11 +146,11 @@ def main():
     X_drugs_train, X_targets_train, y_train = dataset.read_file_training_dataset_drug_target_pairs(
         DATA_PATH + 'new_train.txt')
 
-    fout = open("RESULT_cold_tt.csv", "w")
+    fout = open("RESULT_" + sys.argv[1] + "_" + sys.argv[2] + ".csv", "w")
     drug_encoding_list = ["MPNN", "Transformer", "KPGT"]
     target_encoding_list = [ "Transformer", "ProteinBERT"]
     for target_encoding in target_encoding_list:
-        fout_drug = open("RESULT_cold_tt_protein_" + str(target_encoding) + ".csv", "w")
+        fout_drug = open("RESULT_" + sys.argv[1] + "_" + sys.argv[2] + "_protein_" + str(target_encoding) + ".csv", "w")
         for drug_encoding in drug_encoding_list:
             print(drug_encoding, target_encoding)
             # data split (lets just use their function for now)
@@ -187,7 +186,7 @@ def main():
                                         split_method='no_split')
             y_pred_custom = model.predict(X_pred)
             pic50_nrmse, ic50_nrmse = error_metrics(y, y_pred_custom)
-            save_to_csv(y, y_pred_custom, file_name = "Result_warmstart_TT_"+str(drug_encoding)+"_"+str(target_encoding)+".csv")
+            save_to_csv(y, y_pred_custom, file_name = "RESULT_" + sys.argv[1] + "_" + sys.argv[2] + str(drug_encoding)+ "_" + str(target_encoding) + ".csv")
  
             print("DRUG ENCODING:", drug_encoding, "TARGET ENCODING:", target_encoding,
                   "PIC_50 Normalized RMSE:", pic50_nrmse, "IC_50_nM Normalized RMSE:", ic50_nrmse)
