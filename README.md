@@ -112,3 +112,7 @@ The dataset includes both cold-start and warm-start splits to evaluate the model
 - DeepPurpose: For drug-target interaction features.
 - DGL: For graph-based computations.
 - RDKit: For chemical informatics.
+
+## Credits
+
+This project incorporates code from [lihan97/KPGT](https://github.com/lihan97/KPGT), originally developed by lihan97.
