@@ -3,6 +3,7 @@
 ## Overview
 
 This repository contains the code for DTI-TT, a tool designed to predict drug-target interactions (DTIs) using a Two Tower recommendation system.
+
 ![TT_bg](https://github.com/user-attachments/assets/9e30aeac-8326-44d0-8e79-27dc38c3868e)
 
 ---
