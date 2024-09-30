@@ -18,7 +18,7 @@ if sys.argv[1] == "tt":
 elif sys.argv[1] == "bs":
     from DTI import DTI_Baseline as models
 
-DATA_PATH = "/home/aix23606/DTI_DeepPurpose/dataset/"
+DATA_PATH = "./data/"
 
 if sys.argv[2] == "cold":
     TRAIN_FILE_NAME = "coldstart_train.csv"
