@@ -401,7 +401,8 @@ def encode_drug(df_data, drug_encoding, column_name = 'SMILES', save_column_name
 		df_data[save_column_name] = [unique_dict[i] for i in df_data[column_name]]
 
 	elif drug_encoding == 'KPGT':
-		with open('../embeddings/KPGT/usage/updated_SMILES_dict.pkl', 'rb') as file:
+		kpgt_pickle_file_path = os.path.join(embedding_dir, 'KPGT', 'usage', 'updated_SMILES_dict.pkl')
+		with open(kpgt_pickle_file_path, 'rb') as file:
 			unique_dict = pickle.load(file)
 		df_data[save_column_name] = df_data[column_name].map(unique_dict)
 		unmatched_rows = df_data[df_data[save_column_name].isna()]
@@ -411,7 +412,7 @@ def encode_drug(df_data, drug_encoding, column_name = 'SMILES', save_column_name
 			print("Unmatched values in the column")
 			print(unmatched_values)
 
-			unmatched_csv_path = '../embeddings/KPGT/usage/unmatched_drug_unique.csv'
+			unmatched_csv_path = os.path.join(embedding_dir, 'KPGT', 'usage', 'umatched_drug_unique.csv')
 			unmatched_rows.to_csv(unmatched_csv_path, index=False)
 			print(unmatched_rows.columns)
 
@@ -422,7 +423,7 @@ def encode_drug(df_data, drug_encoding, column_name = 'SMILES', save_column_name
 			unique_dict.update(unmatched_dict)
 			df_data[save_column_name] = df_data[column_name].map(unique_dict)
 
-			with open('../embeddings/KPGT/usage/updated_SMILES_dict.pkl', 'wb') as file:
+			with open(embedding_dir, 'wb') as file:
 				pickle.dump(unique_dict, file)
     
 		print("Drug encode complete")
@@ -1139,21 +1140,15 @@ def protein2espf(x):
     v1[i1] = 1
     return v1
 
-# x1: protein sequence
-# v1: embedding --> np.array
-# (1) load dict (Seqeunce existed in new_train_protein and new_test_protein of all protein seq < 2000: {Seq: Emb})
-# v1 = np.array(dic_name[x])
+
 def protein2BERT(x):
-
-    with open('../embeddings/proteinBERT.pkl', 'rb') as f:
+    proteinBERT_pickle_file_path = os.path.join(embedding_dir, 'proteinBERT.pkl')
+    with open(proteinBERT_pickle_file_path, 'rb') as f:
         data = pickle.load(f)
-        
-        v1_str = data[x].strip("[]") # data[x] --> "[-1.59092120e-02  1.63246670e-02 -5.66587300e-03 ...]"
+        v1_str = data[x].strip("[]")
         v1 = np.fromstring(v1_str, sep=' ', dtype=float)
-        # print(f"v1: {v1}, v1 shape: {v1.shape}") --> (1024, )
         
-        return v1
-
+	    return v1
 
 # '?' padding
 amino_char = ['?', 'A', 'C', 'B', 'E', 'D', 'G', 'F', 'I', 'H', 'K', 'M', 'L', 'O',
