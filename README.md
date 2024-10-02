@@ -112,9 +112,9 @@ Download the dataset, create a `DTI_TT/data` folder, and save the dataset in thi
 
 ## Acknowledgments
 
-- DeepPurpose: For drug-target interaction features.
-- DGL: For graph-based computations.
-- RDKit: For chemical informatics.
+- DeepPurpose [kexinhuang12345/DeepPurpose](https://github.com/kexinhuang12345/DeepPurpose): For drug-target interaction features. 
+- DGL [dmlc/dgl](https://github.com/dmlc/dgl): For graph-based computations.
+- RDKit [RDKit](https://www.rdkit.org/): For chemical informatics.
 
 ## Credits
 
