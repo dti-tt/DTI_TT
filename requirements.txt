@@ -16,7 +16,7 @@ cycler==0.12.1
 decorator==5.1.1
 DeepPurpose==0.1.5
 descriptastorus @ git+https://github.com/bp-kelley/descriptastorus@9b133e2c91bb6a67df53db4cba992776db219ab7
-dgl==2.4.0+cu124
+dgl
 dgllife==0.3.2
 exceptiongroup==1.2.2
 executing==2.1.0
