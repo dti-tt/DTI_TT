@@ -19,7 +19,10 @@ DTI_TT/
 │   ├── warmstart_test.csv                # Warm-start test dataset
 │   └── warmstart_train.csv               # Warm-start training dataset
 │
-├── DeepPurpose/
+├── DeepPurpose/                          # Deep learning library for DTI
+│   ├── DTI_Baseline.py                   # Modified DTI.py for MLP-based Fusion
+│   ├── DTI_TwoTower.py                   # Modified DTI.py for Two-Tower model
+│   └── utils.py                          # Modified utils.py
 │
 ├── embeddings/                           # Pretrained embeddings directory
 │   ├── KPGT/                             # Pretrained KPGT directory
